@@ -8,7 +8,7 @@ node{
     sh "${mvnHOME} clean package"
   }
   stage('Docker Build image'){
-   sh label: '', script: 'docker build -t saivikas408/my-app:2.0.0 .'
+   sh label: '', script: 'sudo docker build -t saivikas408/my-app:2.0.0 .'
   }
 
 }
