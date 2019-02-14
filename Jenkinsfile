@@ -14,6 +14,6 @@ node{
     withCredentials([string(credentialsId: 'f47160ce-2157-47bd-96b9-8d7052ede4b2', variable: 'password')]) {
       sh "docker login -u saivikas408 -p ${password}"
     }
-   sh label: '', script: 'docker push saivkas408/my-app:2.0.0'
+   sh label: '', script: 'docker push saivikas408/my-app:2.0.0'
   }
 }
