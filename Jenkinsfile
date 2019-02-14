@@ -1,0 +1,6 @@
+node{
+  stage('git checkout') {
+    
+}
+
+}
