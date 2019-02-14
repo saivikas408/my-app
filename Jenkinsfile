@@ -18,8 +18,8 @@ node{
   }
   stage('Run the container'){
     sshagent(['sshkey']) {
-      def dockerrun = 'docker run -d -p 9090:8080 --name testtomcat saivikas408/my-app:2.0.0
-      sh label: '', script: 'ssh ec2-user@52.87.210.119 ${dockerrun}'
+      def dockerrun = 'docker run -d -p 9090:8080 --name testtomcat saivikas408/my-app:2.0.0'
+      sh label: '', script: "ssh ec2-user@52.87.210.119 ${dockerrun}"
     }
   
   }
