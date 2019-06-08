@@ -27,5 +27,10 @@ pipeline{
 				sh 'docker push vikasawsdemo/mvnpipeline:v1'
 			}
 		}
+		stage('Running Image') {
+			steps {
+				sh 'docker run -d -p 9000:8080 vikasawsdemo/mvnpipeline:v1'
+			}
+		}
 	}
-} 
+}
