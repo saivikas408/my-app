@@ -15,5 +15,8 @@ pipeline{
 				sh "mvn clean package"			
 			}
 		}
+		stage('Building Docker Image') {
+			sh 'docker build -t vikasasdemo/mvnpipeline:v1 .'
+		}
 	}
 }
