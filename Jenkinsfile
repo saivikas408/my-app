@@ -1,5 +1,6 @@
 pipeline{
 	agent any
+	
 	stages{
 		stage('Git Checkout ') {
  			 steps {
@@ -7,10 +8,10 @@ pipeline{
 			}
 		}
 		stage('Build'){
-			steps {
-				tools {
+			tools {
 					maven 'mvnhome'
-				}
+			}
+			steps {
 				sh "mvn clean package"			
 			}
 		}
