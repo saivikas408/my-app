@@ -16,7 +16,7 @@ pipeline{
 		}
 		stage('Building Docker Image') {
 			steps {
-				sh 'docker build -t vikasasdemo/mvnpipeline:v1 .'
+				sh 'docker build -t vikasawsdemo/mvnpipeline:v1 .'
 			}
 		}
 		stage('Push Docker Image to HUB') {
