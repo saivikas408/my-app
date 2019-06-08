@@ -16,7 +16,9 @@ pipeline{
 			}
 		}
 		stage('Building Docker Image') {
-			sh 'docker build -t vikasawsdemo/mvnpipeline:v1 .'
+			steps {
+				sh 'docker build -t vikasasdemo/mvnpipeline:v1 .'
+			}
 		}
 	}
 }
