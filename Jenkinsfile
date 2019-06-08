@@ -1,6 +1,5 @@
 pipeline{
-	agent any
-	
+	agent any	
 	stages{
 		stage('Git Checkout ') {
  			 steps {
@@ -20,5 +19,13 @@ pipeline{
 				sh 'docker build -t vikasasdemo/mvnpipeline:v1 .'
 			}
 		}
+		stage('Push Docker Image to HUB') {
+			steps {
+				withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerpassword', usernameVariable: 'dockerusername')]) {
+					sh "docker login -u ${dockerusername} -p ${dockerpassword}"
+				}
+				sh 'docker push vikasawsdemo/mvnpipeline:v1'
+			}
+		}
 	}
-}
+} 
