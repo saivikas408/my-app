@@ -11,7 +11,7 @@ pipeline{
 				tools {
 					maven 'mvnhome'
 				}
-				mvn clean package			
+				sh "mvn clean package"			
 			}
 		}
 	}
